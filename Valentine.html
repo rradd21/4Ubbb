@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Meta viewport penting untuk tampilan mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap");
+
+    body {
+      background: linear-gradient(45deg, #ff0099, #ff6600, #ffcc00, #33cc33, #0099ff, #6600cc);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: "Dancing Script", cursive;
+      text-align: center;
+      color: white;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 48px;
+      animation: emojiBounce 1s infinite alternate;
+      margin: 20px;
+    }
+
+    @keyframes emojiBounce {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .gif_container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+    
+    .buttons {
+      margin-top: 10px;
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+    
+    .yes-button,
+    .no-button,
+    .open-button {
+      font-size: 26px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: "Pacifico", cursive;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .yes-button {
+      background-color: #ff1493;
+      color: white;
+    }
+    
+    .yes-button:hover {
+      background-color: #ff69b4;
+      transform: scale(1.1);
+    }
+    
+    .no-button {
+      background-color: #ff4500;
+      color: white;
+    }
+    
+    .no-button:hover {
+      background-color: #ff6347;
+    }
+    
+    .open-button {
+      background-color: #33cc33;
+      color: white;
+      margin-top: 20px;
+    }
+    
+    .open-button:hover {
+      background-color: #66ff66;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main-container">
+    <h1>Will you be my Valentine? 💕</h1>
+    <div class="buttons">
+      <button class="yes-button" onclick="handleYesClick()">iyaaaaaa 💖</button>
+      <button class="no-button" id="no-button" onclick="handleNoClick()">ngaaak 💔</button>
+    </div>
+    <div class="gif_container">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF" />
+    </div>
+  </div>
+
+  <script>
+    function handleYesClick() {
+      // Ganti konten dengan pesan, GIF perayaan, dan tombol Open
+      document.getElementById("main-container").innerHTML = `
+        <h1 class="header_text">Cieee ngeklik iyaaa 💕</h1>
+        <div class="gif_container">
+          <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="Celebration GIF" />
+        </div>
+        <button class="open-button" onclick="handleOpenClick()">Open</button>
+      `;
+    }
+
+    function handleNoClick() {
+      // Pindahkan tombol No ke posisi acak
+      let noButton = document.getElementById("no-button");
+      let randomX = Math.floor(Math.random() * (window.innerWidth - 150));
+      let randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      noButton.style.position = "absolute";
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+
+    function handleOpenClick() {
+      // Tampilkan surat dengan background menyerupai kertas surat
+      document.getElementById("main-container").innerHTML = `
+        <h1 class="header_text" style="font-size: 42px; margin-bottom: 20px;">Buat Kamuuuh,</h1>
+        <p style="
+          font-size: 20px;
+          padding: 20px;
+          background: #fdf5e6;
+          border: 1px solid #e2d1b9;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+          color: #333;
+          border-radius: 10px;
+          margin: 20px auto;
+          max-width: 600px;
+          line-height: 1.5;
+          font-family: Arial, sans-serif;
+          text-align: left;
+        ">
+          Haiii Cantikkkk, Happys Valentine Days yaaaa.<br><br>
+          Maaf bngt gabisa kasih apa apaa ke lu.<br>
+          Maaf juga blm bisa ketemu sampe sekarangg :)<br>
+          Makasih yaaa buat semuanyaaa<br>
+          Eh iya gw gatau gmn perasaan lu sekarang<br>
+          Tapi yang jelas<br>
+          Jangan asing ya manis, tar aku gapunya temen chating lagi :)<br>
+          Maaaf yaa kalo aku ada salaah<br><br>
+          Appreciate lah buatnya 5 hari jir<br>
+          -Radd
+        </p>
+        <button class="yes-button" onclick="location.reload()">Back</button>
+      `;
+    }
+  </script>
+</body>
+</html>
